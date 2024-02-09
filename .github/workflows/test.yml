@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install git if missing # Containers used by nektos/act don't have git preinstalled
-        run: if ! which git &> /dev/null; then apt-get update && apt-get install -y git; fi; 
+        run: if ! which git &> /dev/null; then apt-get update && apt-get install -y git; fi;
       - uses: ./
         id: release
       - name: Print output

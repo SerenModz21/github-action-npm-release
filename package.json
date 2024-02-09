@@ -1,27 +1,30 @@
 {
-  "name": "github-action-npm-release",
-  "version": "2.0.2",
-  "description": "Automatically generate a release when the package.json version changes",
-  "main": "lib/index.js",
-  "scripts": {
-    "build": "npm i && ncc build index.js --minify --out lib -e package.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/justincy/github-action-npm-release.git"
-  },
-  "author": "Justin York",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/justincy/github-action-npm-release/issues"
-  },
-  "homepage": "https://github.com/justincy/github-action-npm-release#readme",
-  "dependencies": {
-    "@actions/core": "1.2.4",
-    "@octokit/rest": "18.0.3"
-  },
-  "devDependencies": {
-    "@vercel/ncc": "^0.23.0"
-  }
+    "name": "github-action-npm-release",
+    "version": "2.1.0",
+    "description": "Automatically generate a release when the package.json version changes",
+    "main": "lib/index.js",
+    "scripts": {
+        "build": "ncc build index.js --minify --out lib -e package.json",
+        "format": "prettier --write index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/justincy/github-action-npm-release.git"
+    },
+    "author": "Justin York",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/justincy/github-action-npm-release/issues"
+    },
+    "homepage": "https://github.com/justincy/github-action-npm-release#readme",
+    "dependencies": {
+        "@actions/core": "1.10.1",
+        "@octokit/rest": "20.0.2"
+    },
+    "devDependencies": {
+        "@vercel/ncc": "^0.38.1",
+        "prettier": "^3.2.5"
+    },
+    "packageManager": "yarn@4.1.0"
 }
