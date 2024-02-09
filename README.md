@@ -1,5 +1,13 @@
 # Automatic GitHub Release
 
+> [!NOTE]  
+> This is a fork of [justincy/github-action-npm-release](https://github.com/justincy/github-action-npm-release) which contains a few changes.
+>
+> Major changes:
+> - Updates the action to use Node 20 instead of Node 12
+> - Adds apiUrl and messageFormat options (from [@sschoen](https://github.com/sschoen) in https://github.com/justincy/github-action-npm-release/pull/7)
+> - Gets rid of the `set-output` deprecation warnings (from [@sschoen](https://github.com/sschoen) in https://github.com/justincy/github-action-npm-release/pull/7)
+
 Automatically generate a release when the package.json version changes. The release name and tag will match the new version. If no releases yet exist, this action will create the first release.
 
 The release notes will contain a change log generated from git history in the following format:
@@ -13,7 +21,7 @@ The release notes will contain a change log generated from git history in the fo
 
 This action makes a few assumptions:
 
-- `actions/checkout@v2` with `fetch-depth: 0` is used before this action runs. That allows this action to have all the information it needs to generate the change log from the git history.
+- `actions/checkout@v4` with `fetch-depth: 0` is used before this action runs. That allows this action to have all the information it needs to generate the change log from the git history.
 - You are only releasing from one branch
 - It is only used during `push`
 
@@ -32,11 +40,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Release
-        uses: justincy/github-action-npm-release@v1.2.0
+        uses: SerenModz21/github-action-npm-release@master
         id: release
       - name: Print release output
         if: ${{ steps.release.outputs.released == 'true' }}
@@ -58,13 +66,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Automatic GitHub Release
-        uses: justincy/github-action-npm-release@2.0.1
+        uses: SerenModz21/github-action-npm-release@master
         id: release
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         if: steps.release.outputs.released == 'true'
         with:
           registry-url: 'https://npm.pkg.github.com'
