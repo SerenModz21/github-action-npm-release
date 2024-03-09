@@ -87,6 +87,10 @@ async function main() {
             process.exit();
         }
 
+        const isPreReleaseVersion =
+            core.getBooleanInput("checkVersion") &&
+            ["beta", "alpha"].some((x) => newVersion.includes(x));
+
         // 2. Publish a release
         try {
             const { data } = await octokit.repos.createRelease({
@@ -96,11 +100,16 @@ async function main() {
                 name: newVersion,
                 target_commitish: process.env.GITHUB_SHA,
                 body: changeLog,
+                prerelease:
+                    core.getBooleanInput("prelease") || isPreReleaseVersion,
+                draft: core.getBooleanInput("draft"),
             });
             // What output should we provide?
             // https://docs.github.com/en/rest/reference/repos#get-a-release
             core.info(`Created release ${newVersion}`);
             core.setOutput("released", true);
+            core.setOutput("prerelease", data.prerelease);
+            core.setOutput("draft", data.draft);
             core.setOutput("html_url", data.html_url);
             core.setOutput("upload_url", data.upload_url);
             core.setOutput("release_id", data.id);
@@ -111,7 +120,9 @@ async function main() {
                 `Failed to create release ${newVersion} for ${owner}/${repo}#${process.env.GITHUB_SHA}`,
             );
             core.error(error);
-            core.setOutput("released", true);
+            core.setOutput("released", false);
+            core.setOutput("prerelease", false);
+            core.setOutput("draft", false);
             core.debug(JSON.stringify(error.response.headers));
             core.debug(JSON.stringify(error.request));
             process.exit();

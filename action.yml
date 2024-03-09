@@ -18,13 +18,29 @@ inputs:
         default: ${{ github.token }}
         required: false
     messageFormat:
-        description: Commit message format (https://devhints.io/git-log-format)
+        description: Commit message format (https://devhints.io/git-log-format). Defaults to "%h %s".
         default: "%h %s"
+        required: false
+    prelease:
+        description: Whether or not to create a pre-release. Defaults to false.
+        default: false
+        required: false
+    draft:
+        description: Whether or not to create a draft. Defaults to false.
+        default: false
+        required: false
+    checkVersion:
+        description: Whether or not to create pre-release for beta or alpha versions. Defaults to true.
+        default: true
         required: false
 
 outputs:
     released:
         description: "Set to true when a release is created."
+    prerelease:
+        description: "Set to true when the release is a pre-release."
+    draft:
+        description: "Set to true when the release is a draft."
     html_url:
         description: "The URL for viewing the release in a browser."
     upload_url:

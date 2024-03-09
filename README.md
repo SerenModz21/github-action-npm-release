@@ -1,12 +1,15 @@
 # Automatic GitHub Release
 
-> [!NOTE]  
+> [!NOTE]
 > This is a fork of [justincy/github-action-npm-release](https://github.com/justincy/github-action-npm-release) which contains a few changes.
 >
 > Major changes:
 > - Updates the action to use Node 20 instead of Node 12
 > - Adds apiUrl and messageFormat options (from [@sschoen](https://github.com/sschoen) in https://github.com/justincy/github-action-npm-release/pull/7)
 > - Gets rid of the `set-output` deprecation warnings (from [@sschoen](https://github.com/sschoen) in https://github.com/justincy/github-action-npm-release/pull/7)
+> - Adds `prelease` and `draft` options
+> - Create a pre-release if the version includes `beta` or `alpha` and checkVersion is set to true
+> - Sets `released` to false when the release is unable to be created
 
 Automatically generate a release when the package.json version changes. The release name and tag will match the new version. If no releases yet exist, this action will create the first release.
 
@@ -87,10 +90,17 @@ jobs:
 
 - `token`: Personal access token for GitHub authentication. Optional. Defaults to `${{ github.token }}`.
 - `path`: Path of the package.json file that will be examined. Optional. Defaults to `${{ github.workspace }}`.
+- `apiUrl`: The URL of the Git(Hub) REST API. Defaults to `${{ github.api_url }}`.
+- `messageFormat`: Commit message format (https://devhints.io/git-log-format). Defaults to `%h %s`.
+- `prelease`: Whether or not to create a pre-release. Defaults to `false`.
+- `draft`: Whether or not to create a draft. Defaults to `false`.
+- `checkVersion`: Whether or not to create pre-release for beta or alpha versions. Defaults to `true`.
 
 ## Outputs
 
 - `released`: Set to true when a release is created.
+- `prerelease`: Set to true when the release is a pre-release.
+- `draft`: Set to true when the release is a draft.
 - `html_url`: The URL for viewing the release in a browser.
 - `upload_url`: The URL for uploading assets to the release.
 - `release_id`: ID of the release.
@@ -108,5 +118,5 @@ jobs:
 
 ## Possible future enhancements
 
-- Add options for draft and pre-release
-- Add option for custom git-log format
+- ~~Add options for draft and pre-release~~ (added by [@sschoen](https://github.com/sschoen))
+- ~~Add option for custom git-log format~~ (added by [@sschoen](https://github.com/sschoen))
