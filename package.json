@@ -26,5 +26,5 @@
         "@vercel/ncc": "^0.38.1",
         "prettier": "^3.2.5"
     },
-    "packageManager": "yarn@4.1.0"
+    "packageManager": "yarn@4.1.1"
 }
