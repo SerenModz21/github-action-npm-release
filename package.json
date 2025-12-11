@@ -4,7 +4,7 @@
     "description": "Automatically generate a release when the package.json version changes",
     "main": "src/index.js",
     "scripts": {
-        "format": "prettier -wu ."
+        "format": "prettier --write src/index.js"
     },
     "repository": {
         "type": "git",
