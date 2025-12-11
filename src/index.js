@@ -14,7 +14,7 @@ async function main() {
     const [owner, repo] = process.env.GITHUB_REPOSITORY.split("/");
 
     // 1. Get the current version
-    const { version: newVersion } = __non_webpack_require__(
+    const { version: newVersion } = require(
         pathJoin(core.getInput("path"), "package.json"),
     );
     core.info(`New version: ${newVersion}`);
@@ -76,7 +76,7 @@ async function main() {
         // 1. Generate the change log
         let changeLog;
         try {
-            const { stdout, stderr } = await exec(
+            const { stdout } = await exec(
                 `git log ${firstRelease ? "" : `${beginningSha}..HEAD`} --pretty=format:"- %h %s"`,
             );
             changeLog = stdout.trim();

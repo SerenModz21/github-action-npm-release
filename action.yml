@@ -1,57 +1,57 @@
 name: Automatic GitHub Release
 description: Automatic GitHub release when the package.json version changes
 branding:
-    color: blue
-    icon: archive
+  color: blue
+  icon: archive
 
 inputs:
-    path:
-        description: Path of the package.json file that will be examined.
-        default: ${{ github.workspace }}
-        required: false
-    apiUrl:
-        description: The URL of the Git(Hub) REST API. Defaults to GITHUB_API_URL
-        default: ${{ github.api_url }}
-        required: false
-    token:
-        description: Personal access token. Defaults to GITHUB_TOKEN.
-        default: ${{ github.token }}
-        required: false
-    messageFormat:
-        description: Commit message format (https://devhints.io/git-log-format). Defaults to "%h %s".
-        default: "%h %s"
-        required: false
-    prelease:
-        description: Whether or not to create a pre-release. Defaults to false.
-        default: false
-        required: false
-    draft:
-        description: Whether or not to create a draft. Defaults to false.
-        default: false
-        required: false
-    checkVersion:
-        description: Whether or not to create pre-release for beta or alpha versions. Defaults to true.
-        default: true
-        required: false
+  path:
+    description: Path of the package.json file that will be examined.
+    default: ${{ github.workspace }}
+    required: false
+  apiUrl:
+    description: The URL of the Git(Hub) REST API. Defaults to GITHUB_API_URL
+    default: ${{ github.api_url }}
+    required: false
+  token:
+    description: Personal access token. Defaults to GITHUB_TOKEN.
+    default: ${{ github.token }}
+    required: false
+  messageFormat:
+    description: Commit message format (https://devhints.io/git-log-format). Defaults to "%h %s".
+    default: "%h %s"
+    required: false
+  prelease:
+    description: Whether or not to create a pre-release. Defaults to false.
+    default: "false"
+    required: false
+  draft:
+    description: Whether or not to create a draft. Defaults to false.
+    default: "false"
+    required: false
+  checkVersion:
+    description: Whether or not to create pre-release for beta or alpha versions. Defaults to true.
+    default: "true"
+    required: false
 
 outputs:
-    released:
-        description: "Set to true when a release is created."
-    prerelease:
-        description: "Set to true when the release is a pre-release."
-    draft:
-        description: "Set to true when the release is a draft."
-    html_url:
-        description: "The URL for viewing the release in a browser."
-    upload_url:
-        description: "The URL for uploading assets to the release."
-    release_id:
-        description: "ID of the release."
-    release_tag:
-        description: "Tag of the release."
-    release_name:
-        description: "Name of the release."
+  released:
+    description: "Set to true when a release is created."
+  prerelease:
+    description: "Set to true when the release is a pre-release."
+  draft:
+    description: "Set to true when the release is a draft."
+  html_url:
+    description: "The URL for viewing the release in a browser."
+  upload_url:
+    description: "The URL for uploading assets to the release."
+  release_id:
+    description: "ID of the release."
+  release_tag:
+    description: "Tag of the release."
+  release_name:
+    description: "Name of the release."
 
 runs:
-    using: "node20"
-    main: "lib/index.js"
+  using: "node24"
+  main: "src/index.js"

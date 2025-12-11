@@ -1,12 +1,10 @@
 {
     "name": "github-action-npm-release",
-    "version": "2.1.0",
+    "version": "3.0.0",
     "description": "Automatically generate a release when the package.json version changes",
-    "main": "lib/index.js",
+    "main": "src/index.js",
     "scripts": {
-        "build": "ncc build index.js --minify --out lib -e package.json",
-        "format": "prettier --write index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "format": "prettier --write src/index.js"
     },
     "repository": {
         "type": "git",
@@ -19,11 +17,10 @@
     },
     "homepage": "https://github.com/justincy/github-action-npm-release#readme",
     "dependencies": {
-        "@actions/core": "1.11.1",
-        "@octokit/rest": "22.0.0"
+        "@actions/core": "2.0.0",
+        "@octokit/rest": "22.0.1"
     },
     "devDependencies": {
-        "@vercel/ncc": "^0.38.4",
         "prettier": "^3.7.4"
     },
     "packageManager": "yarn@4.12.0"
