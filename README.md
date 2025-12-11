@@ -60,9 +60,9 @@ Works great in tandem with auto-publishing. Here's an example for the GitHub Pac
 ```yml
 name: Release
 on:
-push:
-  branches:
-    - master
+  push:
+    branches:
+      - master
 
 jobs:
   release:
@@ -79,13 +79,12 @@ jobs:
       - uses: actions/setup-node@v6
         if: steps.release.outputs.released == 'true'
         with:
-          registry-url: "https://npm.pkg.github.com"
+          registry-url: https://npm.pkg.github.com
       - name: Publish
         if: steps.release.outputs.released == 'true'
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 ```
 
 ## Inputs
