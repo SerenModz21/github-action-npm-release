@@ -14,7 +14,7 @@ async function main() {
     const [owner, repo] = process.env.GITHUB_REPOSITORY.split("/");
 
     // 1. Get the current version
-    const { version: newVersion } = __non_webpack_require__(
+    const { version: newVersion } = require(
         pathJoin(core.getInput("path"), "package.json"),
     );
     core.info(`New version: ${newVersion}`);
