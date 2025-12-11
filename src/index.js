@@ -76,7 +76,7 @@ async function main() {
         // 1. Generate the change log
         let changeLog;
         try {
-            const { stdout, stderr } = await exec(
+            const { stdout } = await exec(
                 `git log ${firstRelease ? "" : `${beginningSha}..HEAD`} --pretty=format:"- %h %s"`,
             );
             changeLog = stdout.trim();
