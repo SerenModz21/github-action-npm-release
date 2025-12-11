@@ -4,7 +4,8 @@
     "description": "Automatically generate a release when the package.json version changes",
     "main": "src/index.js",
     "scripts": {
-        "format": "prettier --write src/index.js"
+        "format": "prettier --write src/index.js",
+        "build": "ncc build"
     },
     "repository": {
         "type": "git",
@@ -21,6 +22,7 @@
         "@octokit/rest": "22.0.1"
     },
     "devDependencies": {
+        "@vercel/ncc": "^0.38.4",
         "prettier": "^3.7.4"
     },
     "packageManager": "yarn@4.12.0"
