@@ -19,7 +19,7 @@
     },
     "homepage": "https://github.com/justincy/github-action-npm-release#readme",
     "dependencies": {
-        "@actions/core": "1.11.1",
+        "@actions/core": "2.0.0",
         "@octokit/rest": "22.0.0"
     },
     "devDependencies": {
