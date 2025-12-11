@@ -7,7 +7,7 @@
 >
 > - Updates the action to use Node 24 instead of Node 12
 > - Adds apiUrl and messageFormat options (from [@sschoen](https://github.com/sschoen) in <https://github.com/justincy/github-action-npm-release/pull/7>)
-> - Gets rid of the `set-output` deprecation warnings (from [@sschoen](https://github.com/sschoen) in <https://github.com/justincy/github-action-npm-release/pull/7>)
+> - Resolves the `set-output` deprecation warnings (from [@sschoen](https://github.com/sschoen) in <https://github.com/justincy/github-action-npm-release/pull/7>)
 > - Adds `prelease` and `draft` options
 > - Create a pre-release if the version includes `beta` or `alpha` and checkVersion is set to true
 > - Sets `released` to false when the release is unable to be created
