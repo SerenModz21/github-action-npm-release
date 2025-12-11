@@ -20,7 +20,7 @@
     "homepage": "https://github.com/justincy/github-action-npm-release#readme",
     "dependencies": {
         "@actions/core": "1.11.1",
-        "@octokit/rest": "22.0.0"
+        "@octokit/rest": "22.0.1"
     },
     "devDependencies": {
         "@vercel/ncc": "^0.38.4",
