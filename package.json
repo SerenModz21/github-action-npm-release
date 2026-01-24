@@ -23,7 +23,7 @@
     },
     "devDependencies": {
         "@vercel/ncc": "^0.38.4",
-        "prettier": "^3.8.0"
+        "prettier": "^3.8.1"
     },
     "packageManager": "yarn@4.12.0"
 }
