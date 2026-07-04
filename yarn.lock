@@ -175,14 +175,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/ncc@npm:0.44.0":
-  version: 0.44.0
-  resolution: "@vercel/ncc@npm:0.44.0"
+"@vercel/ncc@npm:0.44.1":
+  version: 0.44.1
+  resolution: "@vercel/ncc@npm:0.44.1"
   dependencies:
     node-gyp: "npm:latest"
   bin:
     ncc: dist/ncc/cli.js
-  checksum: 10/6a2a53b5df278b530387cee0644c7cf06aa2ff3aed4b6fc418af6789d3727334e3a0c892283170d80ed3b3919f7ed806f8993df763d1fd05439d962a5b9e4a45
+  checksum: 10/c362588870220b6cb03ca3c773f51eaa2c75f16fe45d7c6e4ba5e83d88b0c13b1b33a5f80e3c64c973478d91a9ca153ced4efd2fe55b501889d54c1563b2eb4d
   languageName: node
   linkType: hard
 
@@ -246,8 +246,8 @@ __metadata:
   dependencies:
     "@actions/core": "npm:2.0.3"
     "@octokit/rest": "npm:22.0.1"
-    "@vercel/ncc": "npm:0.44.0"
-    prettier: "npm:3.8.4"
+    "@vercel/ncc": "npm:0.44.1"
+    prettier: "npm:3.9.4"
   languageName: unknown
   linkType: soft
 
@@ -326,12 +326,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.8.4":
-  version: 3.8.4
-  resolution: "prettier@npm:3.8.4"
+"prettier@npm:3.9.4":
+  version: 3.9.4
+  resolution: "prettier@npm:3.9.4"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 10/54684a3cc6689238692b29fab541c01934af7677be94c02293ba49981a1ac121c8bebe2a865f0c3b963e99d208f847c53aed354cc0ce8750e2d45791d64506c5
+  checksum: 10/4a0dc4389d442f5aca0beb12778c90b6ceb9831940b01a1df5eba9150b5ce96fa52eda9074a10a370e732adc03e2f645597dfd8b7e3f1e94dee28df01004a0fd
   languageName: node
   linkType: hard
 

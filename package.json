@@ -22,8 +22,8 @@
         "@octokit/rest": "22.0.1"
     },
     "devDependencies": {
-        "@vercel/ncc": "0.44.0",
-        "prettier": "3.8.4"
+        "@vercel/ncc": "0.44.1",
+        "prettier": "3.9.4"
     },
     "packageManager": "yarn@4.17.0"
 }
